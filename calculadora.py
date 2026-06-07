@@ -20,7 +20,7 @@ with tab1:
     st.markdown("---")
     
     if figura == "Cuadrado":
-        lado = st.number_input("Ingresa el lado (l):", 
+        lado = st.number_input("Ingresa el lado (l):", min_value=0.0, value=1.0, step=0.1)
         area = lado ** 2
         perimetro = 4 * lado
         st.success(f"**Área ($l^2$):** {area:.2f}")
