@@ -20,16 +20,11 @@ with tab1:
     st.markdown("---")
     
     if figura == "Cuadrado":
-        lado = st.number_input("Ingresa el lado (l):",min_value=0.0, value=None, step=0.1)
+        lado = st.number_input("Ingresa el lado (l):")
         area = lado ** 2
         perimetro = 4 * lado
-  # IMPORTANTE: Como el campo puede estar vacío, debemos validar que el usuario ya digitó algo 
-    # antes de hacer la operación matemática, si no el programa fallará.
-    if base is not None:
         st.success(f"**Área ($l^2$):** {area:.2f}")
         st.success(f"**Perímetro ($4 \\cdot l$):** {perimetro:.2f}")
-    else:
-        st.info("Por favor, ingresa el valor del lado para calcular.")
         
     elif figura == "Rectángulo":
         base = st.number_input("Ingresa la base (b):")
