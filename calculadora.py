@@ -20,59 +20,39 @@ with tab1:
     st.markdown("---")
     
     if figura == "Cuadrado":
-    # Cambiamos value=1.0 por value=None para que aparezca en blanco
-    lado = st.number_input("Ingresa el lado (l):", min_value=0.0, value=None, step=0.1)
-    
-    # IMPORTANTE: Como el campo puede estar vacío, debemos validar que el usuario ya digitó algo 
-    # antes de hacer la operación matemática, si no el programa fallará.
-    if lado is not None:
+        lado = st.number_input("Ingresa el lado (l):", min_value=0.0, value=1.0, step=0.1)
         area = lado ** 2
         perimetro = 4 * lado
         st.success(f"**Área ($l^2$):** {area:.2f}")
         st.success(f"**Perímetro ($4 \\cdot l$):** {perimetro:.2f}")
-    else:
-        st.info("Por favor, ingresa el valor del lado para calcular.")
         
     elif figura == "Rectángulo":
-    base = st.number_input("Ingresa la base (b):", min_value=0.0, value=None, step=0.1)
-    altura = st.number_input("Ingresa la altura (h):", min_value=0.0, value=None, step=0.1)
-    
-    # Validamos que AMBOS campos tengan datos antes de operar
-    if base is not None and altura is not None:
+        base = st.number_input("Ingresa la base (b):", min_value=0.0, value=1.0, step=0.1)
+        altura = st.number_input("Ingresa la altura (h):", min_value=0.0, value=1.0, step=0.1)
         area = base * altura
         perimetro = 2 * (base + altura)
         st.success(f"**Área ($b \\cdot h$):** {area:.2f}")
         st.success(f"**Perímetro ($2b + 2h$):** {perimetro:.2f}")
-    else:
-        st.info("Por favor, ingresa la base y la altura para calcular.")
         
     elif figura == "Triángulo":
-    base = st.number_input("Ingresa la base para el área:", min_value=0.0, value=None, step=0.1)
-    altura = st.number_input("Ingresa la altura para el área:", min_value=0.0, value=None, step=0.1)
-    
-    st.caption("Para el perímetro, ingresa los tres lados:")
-    l1 = st.number_input("Lado 1:", min_value=0.0, value=None, step=0.1)
-    l2 = st.number_input("Lado 2:", min_value=0.0, value=None, step=0.1)
-    l3 = st.number_input("Lado 3:", min_value=0.0, value=None, step=0.1)
-    
-    # Aquí validamos que absolutamente todos los campos tengan un número asignado
-    if all(v is not None for v in [base, altura, l1, l2, l3]):
+        base = st.number_input("Ingresa la base para el área:", min_value=0.0, value=1.0, step=0.1)
+        altura = st.number_input("Ingresa la altura para el área:", min_value=0.0, value=1.0, step=0.1)
+        st.caption("Para el perímetro, ingresa los tres lados:")
+        l1 = st.number_input("Lado 1:", min_value=0.0, value=1.0, step=0.1)
+        l2 = st.number_input("Lado 2:", min_value=0.0, value=1.0, step=0.1)
+        l3 = st.number_input("Lado 3:", min_value=0.0, value=1.0, step=0.1)
+        
         area = (base * altura) / 2
         perimetro = l1 + l2 + l3
         st.success(f"**Área ($\\frac{{b \\cdot h}}{{2}}$):** {area:.2f}")
         st.success(f"**Perímetro ($a + b + c$):** {perimetro:.2f}")
-    else:
-        st.info("Por favor, completa todos los campos para realizar los cálculos.")
         
     elif figura == "Círculo":
-        radio = st.number_input("Ingresa el radio (r):", min_value=0.0, value=None, step=0.1)
-    if radio is not None:
+        radio = st.number_input("Ingresa el radio (r):", min_value=0.0, value=1.0, step=0.1)
         area = math.pi * (radio ** 2)
         perimetro = 2 * math.pi * radio
         st.success(f"**Área ($\\pi \\cdot r^2$):** {area:.2f}")
         st.success(f"**Perímetro ($2 \\cdot \\pi \\cdot r$):** {perimetro:.2f}")
- else:
-        st.info("Por favor, ingresa la base y la altura para calcular.")
 
 # ==========================================
 # PESTAÑA 2: SÓLIDOS REGULARES
