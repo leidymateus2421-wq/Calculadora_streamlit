@@ -20,15 +20,15 @@ with tab1:
     st.markdown("---")
     
     if figura == "Cuadrado":
-        lado = st.number_input("Ingresa el lado (l):", min_value=0.0, value=1.0, step=0.1)
+        lado = st.number_input("Ingresa el lado (l):",)
         area = lado ** 2
         perimetro = 4 * lado
         st.success(f"**Área ($l^2$):** {area:.2f}")
         st.success(f"**Perímetro ($4 \\cdot l$):** {perimetro:.2f}")
         
     elif figura == "Rectángulo":
-        base = st.number_input("Ingresa la base (b):", min_value=0.0, value=1.0, step=0.1)
-        altura = st.number_input("Ingresa la altura (h):", min_value=0.0, value=1.0, step=0.1)
+        base = st.number_input("Ingresa la base (b):")
+        altura = st.number_input("Ingresa la altura (h):")
         area = base * altura
         perimetro = 2 * (base + altura)
         st.success(f"**Área ($b \\cdot h$):** {area:.2f}")
@@ -36,11 +36,11 @@ with tab1:
         
     elif figura == "Triángulo":
         base = st.number_input("Ingresa la base para el área:",)
-        altura = st.number_input("Ingresa la altura para el área:", min_value=0.0, value=1.0, step=0.1)
+        altura = st.number_input("Ingresa la altura para el área:")
         st.caption("Para el perímetro, ingresa los tres lados:")
-        l1 = st.number_input("Lado 1:", min_value=0.0, value=1.0, step=0.1)
-        l2 = st.number_input("Lado 2:", min_value=0.0, value=1.0, step=0.1)
-        l3 = st.number_input("Lado 3:", min_value=0.0, value=1.0, step=0.1)
+        l1 = st.number_input("Lado 1:")
+        l2 = st.number_input("Lado 2:")
+        l3 = st.number_input("Lado 3:")
         
         area = (base * altura) / 2
         perimetro = l1 + l2 + l3
@@ -48,7 +48,7 @@ with tab1:
         st.success(f"**Perímetro ($a + b + c$):** {perimetro:.2f}")
         
     elif figura == "Círculo":
-        radio = st.number_input("Ingresa el radio (r):", min_value=0.0, value=1.0, step=0.1)
+        radio = st.number_input("Ingresa el radio (r):")
         area = math.pi * (radio ** 2)
         perimetro = 2 * math.pi * radio
         st.success(f"**Área ($\\pi \\cdot r^2$):** {area:.2f}")
@@ -64,23 +64,23 @@ with tab2:
     st.markdown("---")
     
     if solido == "Cubo":
-        arista = st.number_input("Ingresa la arista (a):", min_value=0.0, value=1.0, step=0.1)
+        arista = st.number_input("Ingresa la arista (a):")
         volumen = arista ** 3
         st.info(f"**Volumen ($a^3$):** {volumen:.2f}")
         
     elif solido == "Esfera":
-        radio = st.number_input("Ingresa el radio (r):", min_value=0.0, value=1.0, step=0.1)
+        radio = st.number_input("Ingresa el radio (r):",)
         volumen = (4/3) * math.pi * (radio ** 3)
         st.info(f"**Volumen ($\\frac{{4}}{{3}} \\cdot \\pi \\cdot r^3$):** {volumen:.2f}")
         
     elif solido == "Cilindro":
-        radio = st.number_input("Ingresa el radio de la base (r):", min_value=0.0, value=1.0, step=0.1)
-        altura = st.number_input("Ingresa la altura (h):", min_value=0.0, value=1.0, step=0.1)
+        radio = st.number_input("Ingresa el radio de la base (r):")
+        altura = st.number_input("Ingresa la altura (h):")
         volumen = math.pi * (radio ** 2) * altura
         st.info(f"**Volumen ($\\pi \\cdot r^2 \\cdot h$):** {volumen:.2f}")
         
     elif solido == "Cono":
-        radio = st.number_input("Ingresa el radio de la base (r):", min_value=0.0, value=1.0, step=0.1)
-        altura = st.number_input("Ingresa la altura (h):", min_value=0.0, value=1.0, step=0.1)
+        radio = st.number_input("Ingresa el radio de la base (r):")
+        altura = st.number_input("Ingresa la altura (h):")
         volumen = (1/3) * math.pi * (radio ** 2) * altura
         st.info(f"**Volumen ($\\frac{{1}}{{3}} \\cdot \\pi \\cdot r^2 \\cdot h$):** {volumen:.2f}")
