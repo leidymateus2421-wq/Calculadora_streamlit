@@ -4,7 +4,7 @@ import streamlit as st
 # Configuración de la página web
 st.set_page_config(page_title="Tu Calculadora Geométrica", page_icon="🧮", layout="centered")
 
-st.title("🧮 Tu Calculador WEB a mano")
+st.title("🧮 Tu Calculador Web a mano")
 st.write("Bienvenido a tu calculadora de figuras planas y sólidos regulares. Adelante!!!")
 
 # Crear pestañas en la página web
