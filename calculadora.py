@@ -35,7 +35,7 @@ with tab1:
         st.success(f"**Perímetro ($2b + 2h$):** {perimetro:.2f}")
         
     elif figura == "Triángulo":
-        base = st.number_input("Ingresa la base para el área:", min_value=0.0, value=1.0, step=0.1)
+        base = st.number_input("Ingresa la base para el área:",)
         altura = st.number_input("Ingresa la altura para el área:", min_value=0.0, value=1.0, step=0.1)
         st.caption("Para el perímetro, ingresa los tres lados:")
         l1 = st.number_input("Lado 1:", min_value=0.0, value=1.0, step=0.1)
